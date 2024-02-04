@@ -1,16 +1,27 @@
+import { motion } from "framer-motion";
 import Delete from "../../assets/delete.svg";
 import Checkout from "../../assets/icons/checkout.svg";
 import useMovie from "../../hooks/useMovie";
 import { getImgUrl } from "../../utils/cine-utility";
 function CartDetails({ onClose }) {
-  const { cartData, setCartData } = useMovie();
+  const { cartState, cartDispatch } = useMovie();
   const handleDeleteCart = (e, itemId) => {
-    const updatedItem = cartData.filter((cart) => cart.id !== itemId);
-    setCartData([...updatedItem]);
+    cartDispatch({
+      type: "REMOVE_FROM_CART",
+      payload: itemId,
+    });
   };
-  const activeCart = cartData.filter((cart) => cart.showCart === true);
+  const activeCart = cartState.cartData.filter(
+    (cart) => cart.showCart === true
+  );
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+    >
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[790px] p-4 max-h-[90vh] overflow-auto">
         {/* <div className="bg-white shadow-md dark:bg-[#12141D] rounded-2xl overflow-hidden p-5 md:p-9"> */}
         <div className="bg-white shadow-md rounded-2xl overflow-hidden p-5 md:p-9">
@@ -45,7 +56,7 @@ function CartDetails({ onClose }) {
                     <div className="flex justify-between gap-4 items-center">
                       <button
                         onClick={(e) => handleDeleteCart(e, id)}
-                        className="bg-[#D42967] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
+                        className="bg-[#ffafaf] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
                       >
                         <img className="w-5 h-5" src={Delete} alt="" />
                         <span className="max-md:hidden">Remove</span>
@@ -57,13 +68,16 @@ function CartDetails({ onClose }) {
             })
           )}
           <div className="flex items-center justify-end gap-2">
-            <a
-              className="rounded-md p-2 md:px-4 inline-flex items-center space-x-2 bg-primary text-[#171923] text-sm"
-              href="#"
-            >
-              <img src={Checkout} width="24" height="24" alt="" />
-              <span>Checkout</span>
-            </a>
+            {activeCart.length !== 0 && (
+              <a
+                className="rounded-md p-2 md:px-4 inline-flex items-center space-x-2 bg-primary text-[#171923] text-sm"
+                href="#"
+              >
+                <img src={Checkout} width="24" height="24" alt="" />
+                <span>Checkout</span>
+              </a>
+            )}
+
             <a
               onClick={onClose}
               className="border border-[#74766F] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#6F6F6F] dark:text-gray-200 font-semibold text-sm"
@@ -74,7 +88,7 @@ function CartDetails({ onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

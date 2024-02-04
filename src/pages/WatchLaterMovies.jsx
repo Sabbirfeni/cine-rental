@@ -1,7 +1,7 @@
-import { getAllMovies } from "../../data/movies";
-import MovieCard from "./MovieCard";
-function MovieList() {
-  const movies = getAllMovies();
+import MovieCard from "../components/movie/MovieCard";
+import { getWatchLaterMovies } from "../data/movies";
+function WatchLaterMovies() {
+  const movies = getWatchLaterMovies();
 
   return (
     <div className="content">
@@ -14,4 +14,4 @@ function MovieList() {
   );
 }
 
-export default MovieList;
+export default WatchLaterMovies;
