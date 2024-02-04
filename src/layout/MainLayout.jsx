@@ -8,7 +8,7 @@ function MainLayout() {
 
   return (
     <>
-      <div className={`${darkMode ? "dark" : ""}`}>
+      <div className={`${darkMode ? "dark" : ""} transition duration-500`}>
         <Header />
         <main className="pt-28">
           <div className="container h-[100vh] grid lg:grid-cols-[218px_1fr] gap-[3.5rem]">
