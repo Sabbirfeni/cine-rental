@@ -22,7 +22,7 @@ function Header() {
   );
 
   return (
-    <header className="fixed top-0 w-full bg-black z-50">
+    <header className="fixed top-0 w-full bg-white dark:bg-[#171923] transition duration-500 z-50">
       <AnimatePresence mode="wait">
         {showCart && <CartDetails onClose={() => setShowCart(false)} />}
       </AnimatePresence>

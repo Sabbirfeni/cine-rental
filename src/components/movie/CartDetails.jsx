@@ -24,7 +24,7 @@ function CartDetails({ onClose }) {
     >
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[790px] p-4 max-h-[90vh] overflow-auto">
         {/* <div className="bg-white shadow-md dark:bg-[#12141D] rounded-2xl overflow-hidden p-5 md:p-9"> */}
-        <div className="bg-white shadow-md rounded-2xl overflow-hidden p-5 md:p-9">
+        <div className="bg-white shadow-md dark:bg-[#12141D]  rounded-2xl overflow-hidden p-5 md:p-9">
           <h2 className="text-2xl lg:text-[30px] mb-10 font-bold">
             Your Carts
           </h2>
@@ -56,7 +56,7 @@ function CartDetails({ onClose }) {
                     <div className="flex justify-between gap-4 items-center">
                       <button
                         onClick={(e) => handleDeleteCart(e, id)}
-                        className="bg-[#ffafaf] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
+                        className="bg-[#ff5353] rounded-md p-2 md:px-4 inline-flex items-center space-x-2 text-white"
                       >
                         <img className="w-5 h-5" src={Delete} alt="" />
                         <span className="max-md:hidden">Remove</span>

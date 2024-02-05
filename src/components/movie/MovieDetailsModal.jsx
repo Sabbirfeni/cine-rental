@@ -15,7 +15,7 @@ function MovieDetailsModal({ movie, onClose, onCardAdd, onCheckIsShowCart }) {
       className="fixed inset-0 flex items-center justify-center z-50 bg-black/60 backdrop-blur-sm"
     >
       <motion.div className=" w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[984px] p-4 max-h-[90vh] overflow-auto">
-        <div className="bg-white shadow-md dark:bg-[#dbe1fa] rounded-2xl sm:grid sm:grid-cols-[2fr_1fr] overflow-hidden">
+        <div className="bg-white shadow-md dark:bg-[#12141D] rounded-2xl sm:grid sm:grid-cols-[2fr_1fr] overflow-hidden">
           <img
             className="sm:order-2 w-full object-cover h-full max-sm:max-h-[300px]"
             src={getImgUrl(cover)}
