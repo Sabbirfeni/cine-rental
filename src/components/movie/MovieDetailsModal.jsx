@@ -39,7 +39,7 @@ function MovieDetailsModal({ movie, onClose, onCardAdd, onCheckIsShowCart }) {
               {onCheckIsShowCart(id) ? (
                 <a
                   onClick={(e) => onCardAdd(e, movie)}
-                  className="bg-[#ffafaf] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
+                  className="bg-[#ff5353] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
                   href="#"
                 >
                   <img src="./assets/tag.svg" alt="" />
