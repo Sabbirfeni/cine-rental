@@ -12,12 +12,17 @@ function Sidebar() {
         <li>
           <NavLink
             to="/"
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-            style={({ isActive }) =>
+            // className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
+            className={({ isActive }) =>
               isActive
-                ? { backgroundColor: "#00D991", color: "#000" }
-                : { color: "#fff" }
+                ? "flex items-center space-x-2 px-5 py-3.5 rounded-lg bg-[#00D991] text-[#000]"
+                : "flex items-center space-x-2 px-5 py-3.5 rounded-lg text-#fff"
             }
+            // style={({ isActive }) =>
+            //   isActive
+            //     ? { backgroundColor: "#00D991", color: "#000" }
+            //     : { color: "#fff" }
+            // }
             href="#"
           >
             <img src={Trending} width="24" height="24" alt="" />
@@ -27,11 +32,10 @@ function Sidebar() {
         <li>
           <NavLink
             to="new-release"
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-            style={({ isActive }) =>
+            className={({ isActive }) =>
               isActive
-                ? { backgroundColor: "#00D991", color: "#000" }
-                : { color: "#fff" }
+                ? "flex items-center space-x-2 px-5 py-3.5 rounded-lg bg-[#00D991] text-[#000]"
+                : "flex items-center space-x-2 px-5 py-3.5 rounded-lg text-#fff"
             }
             href="#"
           >
@@ -42,13 +46,11 @@ function Sidebar() {
         <li>
           <NavLink
             to="coming-soon"
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-            style={({ isActive }) =>
+            className={({ isActive }) =>
               isActive
-                ? { backgroundColor: "#00D991", color: "#000" }
-                : { color: "#fff" }
+                ? "flex items-center space-x-2 px-5 py-3.5 rounded-lg bg-[#00D991] text-[#000]"
+                : "flex items-center space-x-2 px-5 py-3.5 rounded-lg text-#fff"
             }
-            href="#"
           >
             <img src={ComingSoon} width="24" height="24" alt="" />
             <span>Coming Soon</span>
@@ -57,11 +59,10 @@ function Sidebar() {
         <li>
           <NavLink
             to="favourite"
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-            style={({ isActive }) =>
+            className={({ isActive }) =>
               isActive
-                ? { backgroundColor: "#00D991", color: "#000" }
-                : { color: "#fff" }
+                ? "flex items-center space-x-2 px-5 py-3.5 rounded-lg bg-[#00D991] text-[#000]"
+                : "flex items-center space-x-2 px-5 py-3.5 rounded-lg text-#fff"
             }
             href="#"
           >
@@ -72,11 +73,10 @@ function Sidebar() {
         <li>
           <NavLink
             to="watch-later"
-            className="flex items-center space-x-2 px-5 py-3.5 rounded-lg"
-            style={({ isActive }) =>
+            className={({ isActive }) =>
               isActive
-                ? { backgroundColor: "#00D991", color: "#000" }
-                : { color: "#fff" }
+                ? "flex items-center space-x-2 px-5 py-3.5 rounded-lg bg-[#00D991] text-[#000]"
+                : "flex items-center space-x-2 px-5 py-3.5 rounded-lg text-#fff"
             }
             href="#"
           >
